@@ -13,29 +13,23 @@ class StartTransmission {
     private let publisher = PassthroughSubject<String, Never>()
 
     init(rtcService: RTCService, signalingService: SignalingService,presenter: StartTransmissionPresentable) {
+        presenter.subscribe(to: publisher.eraseToAnyPublisher())
         self.presenter = presenter
         self.signalingService = signalingService
         self.rtcService = rtcService
     }
 
     func execute() async {
-        presenter.subscribe(to: publisher.eraseToAnyPublisher())
         subscribe(to: rtcService.eventPublisher)
         do {
-            print("--- verificando canal livre ---")
             if (try await signalingService.requestToStartTransmission()) {
-                print("--- iniciando transmissao ---")
                 try await rtcService.startTransmission()
-                print("--- transmissao iniciada ---")
             }
         } catch SignalingServiceError.failToRequestStart {
-            print("--- deu erro de signaling ---")
             await freeChannel()
         } catch RTCServiceError.failToStartTransmission {
-            print("--- deu erro de rtc ---")
             await stopTransmissionAndFreeChannel()
         } catch {
-            print("--- deu erro de generico ---")
             await stopTransmissionAndFreeChannel()
         }
     }

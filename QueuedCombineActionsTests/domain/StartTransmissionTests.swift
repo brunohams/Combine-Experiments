@@ -98,9 +98,11 @@ class RTCMockService: RTCService {
 
     func startTransmission() -> AnyPublisher<String, Never> {
         Task {
-            delay(millis: 500)
+            delay(millis: 100)
             publisher.send("Connectando...")
+            delay(millis: 100)
             publisher.send("Connectado")
+            delay(millis: 300)
             if shouldThrowError {
                 publisher.send("Erro")
             } else {
@@ -112,7 +114,7 @@ class RTCMockService: RTCService {
 
     func stopTransmission() -> AnyPublisher<String, Never> {
         Task {
-            delay(millis: 500)
+            delay(millis: 300)
             if shouldThrowError {
                 publisher.send("Erro")
             } else {

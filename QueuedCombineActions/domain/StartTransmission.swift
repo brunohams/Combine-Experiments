@@ -30,26 +30,26 @@ class StartTransmission {
     }
 
     private func startTransmission() async throws {
-        try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
+        await withCheckedContinuation { (continuation: CheckedContinuation<Void, Never>) in
             var cancellable: AnyCancellable?
             cancellable = rtcService
                     .startTransmission()
                     .flatMap { event in
                         Future<String, Never> { [self] promise in
                             Task {
-                                try await handleEvent(event)
+                                await handleEvent(event)
                                 promise(.success(event))
                             }
                         }
                     }
                     .sink { value in
                         if (value == "Erro") {
-                            print("Got ERROR - Finalizing job...")
-                            continuation.resume(throwing: NSError(domain: "erro", code: 123))
+                            print("Got ERROR - Finalizing job...- \(getCurrentTime())")
+                            continuation.resume()
                             cancellable?.cancel()
                         }
                         if value == "Transmissao iniciada" {
-                            print("Got SUCCESS - Finalizing job...")
+                            print("Got SUCCESS - Finalizing job...- \(getCurrentTime())")
                             continuation.resume()
                             cancellable?.cancel()
                         }
@@ -57,8 +57,8 @@ class StartTransmission {
         }
     }
 
-    private func handleEvent(_ event: String) async throws {
-        print("handling with event: \(event)")
+    private func handleEvent(_ event: String) async {
+        print("handling with event: \(event) - \(getCurrentTime())")
         if (event == "Erro") {
             delay(millis: 200)
             publisher.send("Deu ruim")
@@ -68,7 +68,7 @@ class StartTransmission {
             delay(millis: 200)
             publisher.send("Pode Falar")
         }
-        print("DONE --- handling with event: \(event)")
+        print("DONE --- handling with event: \(event)- \(getCurrentTime())")
     }
 
 }

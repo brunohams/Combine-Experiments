@@ -5,14 +5,14 @@
 import Foundation
 import Combine
 
-class StartTransmission {
+class Transmit {
 
     private let signalingService: SignalingService
     private let rtcService: RTCService
-    private let presenter: StartTransmissionPresentable
+    private let presenter: TransmitPresentable
     private let publisher = PassthroughSubject<String, Never>()
 
-    init(rtcService: RTCService, signalingService: SignalingService,presenter: StartTransmissionPresentable) {
+    init(rtcService: RTCService, signalingService: SignalingService,presenter: TransmitPresentable) {
         self.presenter = presenter
         self.signalingService = signalingService
         self.rtcService = rtcService

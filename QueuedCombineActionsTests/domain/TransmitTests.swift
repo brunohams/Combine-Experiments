@@ -6,13 +6,13 @@ import XCTest
 import Foundation
 import Combine
 
-class StartTransmissionTests: XCTestCase {
+class TransmitTests: XCTestCase {
 
     var rtcService: RTCMockService!
     var signalingService: SignalingMockService!
     var presenter: DummyPresenter!
-    var useCase: StartTransmission {
-        StartTransmission(
+    var useCase: Transmit {
+        Transmit(
                 rtcService: rtcService,
                 signalingService: signalingService,
                 presenter: presenter
@@ -36,6 +36,17 @@ class StartTransmissionTests: XCTestCase {
         XCTAssertEqual(presenter.emissions, ["Pode Falar"])
     }
 
+    // TODO: Queue or Publisher
+    // queue: Easy implementation
+    // queue: Don't need to sink inside usecase
+    // queue: No control for repeated values
+    // publisher: control for repeated values
+    // publisher: throttle control - https://scotteg.github.io/debounce-vs-throttle
+    func testShouldCallAndWaitStopTransmission() async throws {
+        await useCase.execute() // Q might be a good idea
+
+        XCTAssertEqual(presenter.emissions, ["Pode parar de falar"])
+    }
 
     func testShouldCallAndWaitStartTransmission_WithSIGNALINGError() async throws {
         signalingService.shouldThrowError = true
@@ -64,7 +75,7 @@ class StartTransmissionTests: XCTestCase {
     }
 }
 
-class DummyPresenter: StartTransmissionPresentable {
+class DummyPresenter: TransmitPresentable {
 
     var emissions = [String]()
     var cancellable = Set<AnyCancellable>()

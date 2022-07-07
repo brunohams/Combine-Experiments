@@ -5,6 +5,6 @@
 import Foundation
 import Combine
 
-protocol StartTransmissionPresentable {
+protocol TransmitPresentable {
     func subscribe(to publisher: AnyPublisher<String, Never>)
 }

@@ -8,27 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		F3B3904E7932D6133F32EC2C /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B3990549B5CD3981F42047 /* Util.swift */; };
-		F3B392FF51BCD9EED319FB56 /* StartTransmissionPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B39C230548BF1A87481052 /* StartTransmissionPresentable.swift */; };
-		F3B3932E28186B2CC3956216 /* StartTransmissionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B393F36B216D0EADC53457 /* StartTransmissionTests.swift */; };
+		F3B392FF51BCD9EED319FB56 /* TransmitPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B39C230548BF1A87481052 /* TransmitPresentable.swift */; };
+		F3B3932E28186B2CC3956216 /* TransmitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B393F36B216D0EADC53457 /* TransmitTests.swift */; };
 		F3B3940092EA4454E2BE9149 /* QueuedCombineActionsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B397CFCC13B7B04BE12120 /* QueuedCombineActionsApp.swift */; };
-		F3B39402AA0E96D07D6F760B /* StartTransmission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B3922F76B688FB4D67FA5B /* StartTransmission.swift */; };
+		F3B39402AA0E96D07D6F760B /* Transmit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B3922F76B688FB4D67FA5B /* Transmit.swift */; };
 		F3B3941F8644A6576976F120 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3B39CDC9C1EBB789737DC13 /* Preview Assets.xcassets */; };
 		F3B39448AF643C8967E71C90 /* QueuedCombineActionsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B39D5EF889C039C6268D41 /* QueuedCombineActionsUITestsLaunchTests.swift */; };
 		F3B394C23F23743704C2167A /* SignalingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B397F97525314898265716 /* SignalingService.swift */; };
-		F3B3955DA0E98D3B44636DCB /* StartTransmissionPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B39C230548BF1A87481052 /* StartTransmissionPresentable.swift */; };
+		F3B3955DA0E98D3B44636DCB /* TransmitPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B39C230548BF1A87481052 /* TransmitPresentable.swift */; };
 		F3B397E904096F209946E0CE /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B3990549B5CD3981F42047 /* Util.swift */; };
 		F3B3995C75EC58908AB8F18A /* RTCService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B39AC46E8345FF18594DAA /* RTCService.swift */; };
 		F3B399EC9583EFCF330387DF /* SignalingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B397F97525314898265716 /* SignalingService.swift */; };
 		F3B39B0AC79F53F7B6C0A617 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3B399AEAE44FD557B1F826F /* Assets.xcassets */; };
-		F3B39CDAE893C6A8C8BB36A7 /* StartTransmissionPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B39C230548BF1A87481052 /* StartTransmissionPresentable.swift */; };
+		F3B39CDAE893C6A8C8BB36A7 /* TransmitPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B39C230548BF1A87481052 /* TransmitPresentable.swift */; };
 		F3B39D21CB6D0E3A3ACF7465 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B3990549B5CD3981F42047 /* Util.swift */; };
 		F3B39D764913CF6A8FFFD00C /* RTCService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B39AC46E8345FF18594DAA /* RTCService.swift */; };
-		F3B39DBB513EB0DCD964A2B6 /* StartTransmission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B3922F76B688FB4D67FA5B /* StartTransmission.swift */; };
+		F3B39DBB513EB0DCD964A2B6 /* Transmit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B3922F76B688FB4D67FA5B /* Transmit.swift */; };
 		F3B39DF35E03F576E21A50AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B39F4B3F90585038E9106D /* ContentView.swift */; };
 		F3B39E0A50515DA40236130D /* QueuedCombineActionsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B391A8CD028D4364A2FE5C /* QueuedCombineActionsUITests.swift */; };
 		F3B39F109F09C525ED3EC222 /* RTCService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B39AC46E8345FF18594DAA /* RTCService.swift */; };
 		F3B39F5B7B8B7373A40E2B35 /* SignalingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B397F97525314898265716 /* SignalingService.swift */; };
-		F3B39F914D390B8EDBC14033 /* StartTransmission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B3922F76B688FB4D67FA5B /* StartTransmission.swift */; };
+		F3B39F914D390B8EDBC14033 /* Transmit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B3922F76B688FB4D67FA5B /* Transmit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,8 +50,8 @@
 
 /* Begin PBXFileReference section */
 		F3B391A8CD028D4364A2FE5C /* QueuedCombineActionsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueuedCombineActionsUITests.swift; sourceTree = "<group>"; };
-		F3B3922F76B688FB4D67FA5B /* StartTransmission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartTransmission.swift; sourceTree = "<group>"; };
-		F3B393F36B216D0EADC53457 /* StartTransmissionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartTransmissionTests.swift; sourceTree = "<group>"; };
+		F3B3922F76B688FB4D67FA5B /* Transmit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transmit.swift; sourceTree = "<group>"; };
+		F3B393F36B216D0EADC53457 /* TransmitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransmitTests.swift; sourceTree = "<group>"; };
 		F3B3974E99F16B4D5FBCE517 /* QueuedCombineActionsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QueuedCombineActionsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3B397CFCC13B7B04BE12120 /* QueuedCombineActionsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueuedCombineActionsApp.swift; sourceTree = "<group>"; };
 		F3B397F97525314898265716 /* SignalingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalingService.swift; sourceTree = "<group>"; };
@@ -59,7 +59,7 @@
 		F3B399127CC8D0136FF2DEA2 /* QueuedCombineActions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QueuedCombineActions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3B399AEAE44FD557B1F826F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3B39AC46E8345FF18594DAA /* RTCService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTCService.swift; sourceTree = "<group>"; };
-		F3B39C230548BF1A87481052 /* StartTransmissionPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartTransmissionPresentable.swift; sourceTree = "<group>"; };
+		F3B39C230548BF1A87481052 /* TransmitPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransmitPresentable.swift; sourceTree = "<group>"; };
 		F3B39CDC9C1EBB789737DC13 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F3B39D5EF889C039C6268D41 /* QueuedCombineActionsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueuedCombineActionsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F3B39DB2F1B468E9B10EA8E3 /* QueuedCombineActionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QueuedCombineActionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,7 +130,7 @@
 		F3B3996916CED33FB16BD007 /* domain */ = {
 			isa = PBXGroup;
 			children = (
-				F3B393F36B216D0EADC53457 /* StartTransmissionTests.swift */,
+				F3B393F36B216D0EADC53457 /* TransmitTests.swift */,
 			);
 			path = domain;
 			sourceTree = "<group>";
@@ -138,8 +138,8 @@
 		F3B39A09C9327503533EAF9D /* domain */ = {
 			isa = PBXGroup;
 			children = (
-				F3B3922F76B688FB4D67FA5B /* StartTransmission.swift */,
-				F3B39C230548BF1A87481052 /* StartTransmissionPresentable.swift */,
+				F3B3922F76B688FB4D67FA5B /* Transmit.swift */,
+				F3B39C230548BF1A87481052 /* TransmitPresentable.swift */,
 				F3B397F97525314898265716 /* SignalingService.swift */,
 				F3B39AC46E8345FF18594DAA /* RTCService.swift */,
 			);
@@ -281,8 +281,8 @@
 			files = (
 				F3B39E0A50515DA40236130D /* QueuedCombineActionsUITests.swift in Sources */,
 				F3B39448AF643C8967E71C90 /* QueuedCombineActionsUITestsLaunchTests.swift in Sources */,
-				F3B39402AA0E96D07D6F760B /* StartTransmission.swift in Sources */,
-				F3B392FF51BCD9EED319FB56 /* StartTransmissionPresentable.swift in Sources */,
+				F3B39402AA0E96D07D6F760B /* Transmit.swift in Sources */,
+				F3B392FF51BCD9EED319FB56 /* TransmitPresentable.swift in Sources */,
 				F3B394C23F23743704C2167A /* SignalingService.swift in Sources */,
 				F3B3904E7932D6133F32EC2C /* Util.swift in Sources */,
 				F3B3995C75EC58908AB8F18A /* RTCService.swift in Sources */,
@@ -293,9 +293,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3B39F914D390B8EDBC14033 /* StartTransmission.swift in Sources */,
-				F3B3955DA0E98D3B44636DCB /* StartTransmissionPresentable.swift in Sources */,
-				F3B3932E28186B2CC3956216 /* StartTransmissionTests.swift in Sources */,
+				F3B39F914D390B8EDBC14033 /* Transmit.swift in Sources */,
+				F3B3955DA0E98D3B44636DCB /* TransmitPresentable.swift in Sources */,
+				F3B3932E28186B2CC3956216 /* TransmitTests.swift in Sources */,
 				F3B399EC9583EFCF330387DF /* SignalingService.swift in Sources */,
 				F3B39D21CB6D0E3A3ACF7465 /* Util.swift in Sources */,
 				F3B39D764913CF6A8FFFD00C /* RTCService.swift in Sources */,
@@ -308,8 +308,8 @@
 			files = (
 				F3B3940092EA4454E2BE9149 /* QueuedCombineActionsApp.swift in Sources */,
 				F3B39DF35E03F576E21A50AD /* ContentView.swift in Sources */,
-				F3B39DBB513EB0DCD964A2B6 /* StartTransmission.swift in Sources */,
-				F3B39CDAE893C6A8C8BB36A7 /* StartTransmissionPresentable.swift in Sources */,
+				F3B39DBB513EB0DCD964A2B6 /* Transmit.swift in Sources */,
+				F3B39CDAE893C6A8C8BB36A7 /* TransmitPresentable.swift in Sources */,
 				F3B39F5B7B8B7373A40E2B35 /* SignalingService.swift in Sources */,
 				F3B397E904096F209946E0CE /* Util.swift in Sources */,
 				F3B39F109F09C525ED3EC222 /* RTCService.swift in Sources */,

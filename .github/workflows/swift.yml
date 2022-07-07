@@ -12,8 +12,8 @@ jobs:
     runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Build
-      run: swift build -v
-    - name: Run tests
-      run: swift test -v
+      - name: Xcodebuild Action
+        # You may pin to the exact commit or the version.
+        # uses: sersoft-gmbh/xcodebuild-action@9ffda215e4e07069b94c8c6b65e7d4fd6ec1da7a
+        uses: sersoft-gmbh/xcodebuild-action@v2.0.0
+          

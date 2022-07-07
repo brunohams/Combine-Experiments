@@ -6,6 +6,13 @@ import Foundation
 import Combine
 
 protocol RTCService {
-    func startTransmission() -> AnyPublisher<String, Never>
-    func stopTransmission() -> AnyPublisher<String, Never>
+    var eventPublisher: PassthroughSubject<String, Never> { get }
+
+    func startTransmission() async throws
+    func stopTransmission() async throws
+}
+
+enum RTCServiceError: Error {
+    case failToStartTransmission
+    case failToStopTransmission
 }

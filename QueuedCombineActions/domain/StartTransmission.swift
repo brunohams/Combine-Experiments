@@ -20,55 +20,58 @@ class StartTransmission {
 
     func execute() async {
         presenter.subscribe(to: publisher.eraseToAnyPublisher())
+        subscribe(to: rtcService.eventPublisher)
         do {
+            print("--- verificando canal livre ---")
             if (try await signalingService.requestToStartTransmission()) {
-                try await startTransmission()
+                print("--- iniciando transmissao ---")
+                try await rtcService.startTransmission()
+                print("--- transmissao iniciada ---")
             }
+        } catch SignalingServiceError.failToRequestStart {
+            print("--- deu erro de signaling ---")
+            await freeChannel()
+        } catch RTCServiceError.failToStartTransmission {
+            print("--- deu erro de rtc ---")
+            await stopTransmissionAndFreeChannel()
         } catch {
-            publisher.send("Deu ruim")
+            print("--- deu erro de generico ---")
+            await stopTransmissionAndFreeChannel()
         }
     }
 
-    private func startTransmission() async throws {
-        await withCheckedContinuation { (continuation: CheckedContinuation<Void, Never>) in
-            var cancellable: AnyCancellable?
-            cancellable = rtcService
-                    .startTransmission()
-                    .flatMap { event in
-                        Future<String, Never> { [self] promise in
-                            Task {
-                                await handleEvent(event)
-                                promise(.success(event))
-                            }
-                        }
-                    }
-                    .sink { value in
-                        if (value == "Erro") {
-                            print("Got ERROR - Finalizing job...- \(getCurrentTime())")
-                            continuation.resume()
-                            cancellable?.cancel()
-                        }
-                        if value == "Transmissao iniciada" {
-                            print("Got SUCCESS - Finalizing job...- \(getCurrentTime())")
-                            continuation.resume()
-                            cancellable?.cancel()
-                        }
-                    }
-        }
+    private func subscribe(to publisher: PassthroughSubject<String, Never>) {
+        var cancellable: AnyCancellable?
+        cancellable = publisher
+            .sink(receiveCompletion: { completion in
+                cancellable?.cancel()
+            }, receiveValue: { [self] event in
+                handleEvent(event)
+            })
     }
 
-    private func handleEvent(_ event: String) async {
-        print("handling with event: \(event) - \(getCurrentTime())")
-        if (event == "Erro") {
-            delay(millis: 200)
-            publisher.send("Deu ruim")
-        }
-
+    private func handleEvent(_ event: String) {
+        print("STARTING - handling with event: \(event) - \(getCurrentTime())")
         if event == "Transmissao iniciada" {
             delay(millis: 200)
             publisher.send("Pode Falar")
         }
+        if event == "Transmissao finalizada" {
+            delay(millis: 200)
+            publisher.send("Pode parar de falar")
+        }
         print("DONE --- handling with event: \(event)- \(getCurrentTime())")
+    }
+
+    private func freeChannel() async {
+        try? await signalingService.informEndOfTransmission()
+        publisher.send("Deu ruim")
+    }
+
+    private func stopTransmissionAndFreeChannel() async {
+        try? await rtcService.stopTransmission()
+        try? await signalingService.informEndOfTransmission()
+        publisher.send("Deu ruim")
     }
 
 }

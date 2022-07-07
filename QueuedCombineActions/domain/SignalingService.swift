@@ -8,3 +8,8 @@ protocol SignalingService {
     func requestToStartTransmission() async throws -> Bool
     func informEndOfTransmission() async throws
 }
+
+enum SignalingServiceError: Error {
+    case failToRequestStart
+    case failToInformEnd
+}

@@ -46,16 +46,16 @@ class StartTransmissionTests: XCTestCase {
 
 
     func testShouldCallAndWaitStartTransmission_WithRTCError() async throws {
-        rtcService.shouldThrowError = true
+        rtcService.shouldThrowErrorOnStart = true
         await useCase.execute()
 
-        XCTAssertEqual(presenter.emissions, ["Deu ruim"])
+        XCTAssertEqual(presenter.emissions, ["Pode parar de falar", "Deu ruim"])
     }
 
     func testShouldWaitIfCalledMultipleTimes() async throws {
-        rtcService.shouldThrowError = true
+        rtcService.shouldThrowErrorOnStart = true
         await useCase.execute()
-        XCTAssertEqual(presenter.emissions, ["Deu ruim"])
+        XCTAssertEqual(presenter.emissions, ["Pode parar de falar", "Deu ruim"])
 
         try setUpWithError()
 
@@ -83,56 +83,50 @@ class SignalingMockService: SignalingService {
     var channelIsFree = true
 
     func requestToStartTransmission() async throws -> Bool {
-        delay(millis: 500)
+        delay(millis: 200)
         if shouldThrowError {
-            throw NSError.init(domain: ("Random error"), code: 123)
+            throw SignalingServiceError.failToRequestStart
         }
-
         return channelIsFree
-
     }
 
     func informEndOfTransmission() async throws {
-        delay(millis: 500)
+        delay(millis: 200)
         if shouldThrowError {
-            throw NSError.init(domain: ("Random error"), code: 123)
+            throw SignalingServiceError.failToInformEnd
         }
-
     }
 
 }
 
 class RTCMockService: RTCService {
 
-    var shouldThrowError = false
-    private let publisher = PassthroughSubject<String, Never>()
+    var eventPublisher = PassthroughSubject<String, Never>()
+    var shouldThrowErrorOnStart = false
+    var shouldThrowErrorOnStop = false
 
-    func startTransmission() -> AnyPublisher<String, Never> {
-        Task {
-            delay(millis: 100)
-            publisher.send("Connectando...")
-            delay(millis: 100)
-            publisher.send("Connectado")
-            delay(millis: 300)
-            if shouldThrowError {
-                publisher.send("Erro")
-            } else {
-                publisher.send("Transmissao iniciada")
-            }
+    func startTransmission() async throws {
+        delay(millis: 100)
+        eventPublisher.send("Connectando...")
+        delay(millis: 100)
+        eventPublisher.send("Connectado")
+        delay(millis: 300)
+        if shouldThrowErrorOnStart {
+            throw RTCServiceError.failToStartTransmission
+        } else {
+            eventPublisher.send("Transmissao iniciada")
+            return
         }
-        return publisher.eraseToAnyPublisher()
     }
 
-    func stopTransmission() -> AnyPublisher<String, Never> {
-        Task {
-            delay(millis: 300)
-            if shouldThrowError {
-                publisher.send("Erro")
-            } else {
-                publisher.send("Transmissao finalizada")
-            }
+    func stopTransmission() async throws {
+        delay(millis: 300)
+        if shouldThrowErrorOnStop {
+            throw RTCServiceError.failToStopTransmission
+        } else {
+            eventPublisher.send("Transmissao finalizada")
+            return
         }
-        return publisher.eraseToAnyPublisher()
     }
 
 }

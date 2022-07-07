@@ -51,6 +51,17 @@ class StartTransmissionTests: XCTestCase {
 
         XCTAssertEqual(presenter.emissions, ["Deu ruim"])
     }
+
+    func testShouldWaitIfCalledMultipleTimes() async throws {
+        rtcService.shouldThrowError = true
+        await useCase.execute()
+        XCTAssertEqual(presenter.emissions, ["Deu ruim"])
+
+        try setUpWithError()
+
+        await useCase.execute()
+        XCTAssertEqual(presenter.emissions, ["Pode Falar"])
+    }
 }
 
 class DummyPresenter: StartTransmissionPresentable {

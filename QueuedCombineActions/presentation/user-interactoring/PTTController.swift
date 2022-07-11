@@ -15,7 +15,7 @@ class PTTController {
     }
 
     func togglePTT() {
-        transmissionReducer.on(subject: viewModel.statePublisher)
+        transmissionReducer.on(subject: viewModel.pttSubject)
     }
 
 }

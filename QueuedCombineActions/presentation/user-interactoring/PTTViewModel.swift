@@ -7,10 +7,12 @@ import Combine
 
 class PTTViewModel {
 
-    let statePublisher = CurrentValueSubject<PTTTransmissionState, Never>(.idle)
+    var cancellables = Set<AnyCancellable>()
+    let pttSubject = CurrentValueSubject<PTTTransmissionState, Never>(.idle)
 
     init() {
-        statePublisher.sink { state in
+
+        pttSubject.sink { state in
             switch state {
             case .idle:
                 break
@@ -21,7 +23,7 @@ class PTTViewModel {
             case .receiving:
                 break
             }
-        }
+        }.store(in: &cancellables)
     }
 
 }

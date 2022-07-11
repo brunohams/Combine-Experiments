@@ -39,21 +39,21 @@ class IntegratedTests: XCTestCase {
     func testShouldStartTransmission() {
         controller.togglePTT() // start
 
-        XCTAssertEqual(PTTTransmissionState.started, viewModel.statePublisher.value)
+        XCTAssertEqual(PTTTransmissionState.started, viewModel.pttSubject.value)
     }
 
     func testShouldNotStartTransmission_WhenChannelIsBusy() {
         signalingService.mockReturn = false
         controller.togglePTT() // start
 
-        XCTAssertEqual(PTTTransmissionState.idle, viewModel.statePublisher.value)
+        XCTAssertEqual(PTTTransmissionState.idle, viewModel.pttSubject.value)
     }
 
     func testShouldNotStartTransmission_WhenRTCError() {
         transmissionService.shouldThrowStartError = true
         controller.togglePTT() // start
 
-        XCTAssertEqual(PTTTransmissionState.idle, viewModel.statePublisher.value)
+        XCTAssertEqual(PTTTransmissionState.idle, viewModel.pttSubject.value)
     }
 
     func testEmitError_WhenRTCError() {
@@ -65,29 +65,55 @@ class IntegratedTests: XCTestCase {
 
     //MARK: STOP TESTS
     func testShouldStopTransmission() {
-        viewModel.statePublisher.value = .started
+        viewModel.pttSubject.value = .started
         controller.togglePTT() // stop
 
-        XCTAssertEqual(PTTTransmissionState.idle, viewModel.statePublisher.value)
+        XCTAssertEqual(PTTTransmissionState.idle, viewModel.pttSubject.value)
     }
 
     func testShouldStopTransmission_EvenWithError() {
-        viewModel.statePublisher.value = .started
+        viewModel.pttSubject.value = .started
         signalingService.informEndOfSpeechThrowError = true
         controller.togglePTT() // stop
 
-        XCTAssertEqual(PTTTransmissionState.idle, viewModel.statePublisher.value)
+        XCTAssertEqual(PTTTransmissionState.idle, viewModel.pttSubject.value)
     }
 
+    //MARK: Other Tests
     func testShouldToggleMultipleTimes() {
         controller.togglePTT() // start
-        XCTAssertEqual(PTTTransmissionState.started, viewModel.statePublisher.value)
+        XCTAssertEqual(PTTTransmissionState.started, viewModel.pttSubject.value)
 
         controller.togglePTT() // stop
-        XCTAssertEqual(PTTTransmissionState.idle, viewModel.statePublisher.value)
+        XCTAssertEqual(PTTTransmissionState.idle, viewModel.pttSubject.value)
 
         controller.togglePTT() // start
-        XCTAssertEqual(PTTTransmissionState.started, viewModel.statePublisher.value)
+        XCTAssertEqual(PTTTransmissionState.started, viewModel.pttSubject.value)
+    }
+
+    func testShouldEmitErrorWhenFailsDuringTransmission() {
+        TransmissionViewModel(
+                transmissionService: transmissionService,
+                errorService: errorService,
+                pttSubject: viewModel.pttSubject
+        )
+
+        controller.togglePTT() // start
+        transmissionService.subject.send(.transmitError) // emit error in mid transmission
+        XCTAssertEqual("Deu ruim aqui meu irmão ;-;", errorService.errorQueue.last)
+    }
+
+    func testShouldStopTransmissionWhenFailsDuringTransmission() {
+        TransmissionViewModel(
+                transmissionService: transmissionService,
+                errorService: errorService,
+                pttSubject: viewModel.pttSubject
+        )
+
+        controller.togglePTT() // start
+        transmissionService.subject.send(.transmitError) // emit error in mid transmission
+
+        XCTAssertEqual(.idle, viewModel.pttSubject.value)
     }
 
 }

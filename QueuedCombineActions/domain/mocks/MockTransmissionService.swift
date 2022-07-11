@@ -3,8 +3,10 @@
 //
 
 import Foundation
+import Combine
 
 class MockTransmissionService: TransmissionService {
+    var subject = PassthroughSubject<TransmissionStatus, Never>()
 
     var shouldThrowStartError = false
     var shouldThrowStopError = false

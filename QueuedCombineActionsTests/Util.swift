@@ -5,7 +5,7 @@
 import Foundation
 
 func delay(millis: Double) {
-    usleep(useconds_t(millis * 10000))
+    usleep(useconds_t(millis * 1000))
 }
 
 func getCurrentTime() -> String {

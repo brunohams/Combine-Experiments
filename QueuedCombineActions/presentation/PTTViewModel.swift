@@ -6,6 +6,7 @@ import Foundation
 import Combine
 
 class PTTViewModel {
+
     let statePublisher = CurrentValueSubject<PTTTransmissionState, Never>(.idle)
 
     init() {

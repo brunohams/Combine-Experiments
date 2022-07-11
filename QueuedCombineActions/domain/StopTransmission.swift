@@ -5,13 +5,13 @@
 import Foundation
 import Combine
 
-protocol StartTransmissionUseCase {
+protocol StopTransmissionUseCase {
     func execute(_ subject: CurrentValueSubject<PTTTransmissionState, Never>)
 }
 
-class StartTransmission: StartTransmissionUseCase {
+class StopTransmission: StopTransmissionUseCase {
     func execute(_ subject: CurrentValueSubject<PTTTransmissionState, Never>) {
         // nossos paranue
-        subject.send(.started)
+        subject.send(.idle)
     }
 }

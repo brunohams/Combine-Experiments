@@ -7,28 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE6AA01F2AD872CB24378C5F /* StartTransmission.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AAE89F37AF081EE5FFB88 /* StartTransmission.swift */; };
+		BE6AA0E0B635E24FBA815A1F /* PTTTransmissionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AADB7E0DD2B414D1902B8 /* PTTTransmissionState.swift */; };
+		BE6AA0EB34CF7C1E65D9A6F3 /* TransmissionReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AAA14EED4DA2F6E43DF9A /* TransmissionReducerTests.swift */; };
+		BE6AA10F83F709D2F8C4222B /* TransmissionReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AAA14EED4DA2F6E43DF9A /* TransmissionReducerTests.swift */; };
+		BE6AA154F74D50B0DE0286F6 /* PTTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AA8143D9ACE3400716E1F /* PTTView.swift */; };
+		BE6AA2A8644AA0BD089EE061 /* IntegratedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AA29E172F42A718AC910F /* IntegratedTests.swift */; };
+		BE6AA2EF8588ECB2E8746DEA /* PTTController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AA354E8F40CEED368AB4F /* PTTController.swift */; };
+		BE6AA2FF55DE398F44BF5DE2 /* PTTViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AA87DD65336DC8DC707FC /* PTTViewModel.swift */; };
+		BE6AA3BF7D85067DC2589BD7 /* PTTTransmissionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AADB7E0DD2B414D1902B8 /* PTTTransmissionState.swift */; };
+		BE6AA450E95DA42486378566 /* TransmissionReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AA22DF9463975F67B1DD0 /* TransmissionReducer.swift */; };
+		BE6AA7B33C6EB4FEA7F86BE8 /* PTTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AA8143D9ACE3400716E1F /* PTTView.swift */; };
+		BE6AA884C86ECA51D599C1AD /* PTTController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AA354E8F40CEED368AB4F /* PTTController.swift */; };
+		BE6AA8CE834DDE435A291C60 /* StartTransmission.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AAE89F37AF081EE5FFB88 /* StartTransmission.swift */; };
+		BE6AA98AF23532D53AB00C16 /* StopTransmission.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AA4C8D0C66C49EB5180A9 /* StopTransmission.swift */; };
+		BE6AAA8DCA8B457A47756D9D /* PTTController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AA354E8F40CEED368AB4F /* PTTController.swift */; };
+		BE6AAB35F7517505B2E0BB33 /* PTTViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AA87DD65336DC8DC707FC /* PTTViewModel.swift */; };
+		BE6AABC9707C71967E1F4C1F /* StartTransmission.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AAE89F37AF081EE5FFB88 /* StartTransmission.swift */; };
+		BE6AACF8DAB67174C22C0B0B /* PTTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AA8143D9ACE3400716E1F /* PTTView.swift */; };
+		BE6AADE9C6D320ECDD079E00 /* PTTViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AA87DD65336DC8DC707FC /* PTTViewModel.swift */; };
+		BE6AAE6CB2E6270BB9F4EE3A /* StopTransmission.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AA4C8D0C66C49EB5180A9 /* StopTransmission.swift */; };
+		BE6AAE8DA1AB5C1D09B1BE71 /* StopTransmission.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AA4C8D0C66C49EB5180A9 /* StopTransmission.swift */; };
+		BE6AAE9D2BB47204F2B17A0D /* IntegratedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AA29E172F42A718AC910F /* IntegratedTests.swift */; };
+		BE6AAF23C81C0312F2BB06DE /* PTTTransmissionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AADB7E0DD2B414D1902B8 /* PTTTransmissionState.swift */; };
+		BE6AAF5FF727771E912D0180 /* TransmissionReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AA22DF9463975F67B1DD0 /* TransmissionReducer.swift */; };
+		BE6AAF9B9457EDD5491D340A /* TransmissionReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AA22DF9463975F67B1DD0 /* TransmissionReducer.swift */; };
 		F3B3904E7932D6133F32EC2C /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B3990549B5CD3981F42047 /* Util.swift */; };
-		F3B392FF51BCD9EED319FB56 /* StartTransmissionPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B39C230548BF1A87481052 /* StartTransmissionPresentable.swift */; };
-		F3B3932E28186B2CC3956216 /* StartTransmissionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B393F36B216D0EADC53457 /* StartTransmissionTests.swift */; };
 		F3B3940092EA4454E2BE9149 /* QueuedCombineActionsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B397CFCC13B7B04BE12120 /* QueuedCombineActionsApp.swift */; };
-		F3B39402AA0E96D07D6F760B /* StartTransmission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B3922F76B688FB4D67FA5B /* StartTransmission.swift */; };
 		F3B3941F8644A6576976F120 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3B39CDC9C1EBB789737DC13 /* Preview Assets.xcassets */; };
 		F3B39448AF643C8967E71C90 /* QueuedCombineActionsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B39D5EF889C039C6268D41 /* QueuedCombineActionsUITestsLaunchTests.swift */; };
-		F3B394C23F23743704C2167A /* SignalingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B397F97525314898265716 /* SignalingService.swift */; };
-		F3B3955DA0E98D3B44636DCB /* StartTransmissionPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B39C230548BF1A87481052 /* StartTransmissionPresentable.swift */; };
 		F3B397E904096F209946E0CE /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B3990549B5CD3981F42047 /* Util.swift */; };
-		F3B3995C75EC58908AB8F18A /* RTCService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B39AC46E8345FF18594DAA /* RTCService.swift */; };
-		F3B399EC9583EFCF330387DF /* SignalingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B397F97525314898265716 /* SignalingService.swift */; };
 		F3B39B0AC79F53F7B6C0A617 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3B399AEAE44FD557B1F826F /* Assets.xcassets */; };
-		F3B39CDAE893C6A8C8BB36A7 /* StartTransmissionPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B39C230548BF1A87481052 /* StartTransmissionPresentable.swift */; };
 		F3B39D21CB6D0E3A3ACF7465 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B3990549B5CD3981F42047 /* Util.swift */; };
-		F3B39D764913CF6A8FFFD00C /* RTCService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B39AC46E8345FF18594DAA /* RTCService.swift */; };
-		F3B39DBB513EB0DCD964A2B6 /* StartTransmission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B3922F76B688FB4D67FA5B /* StartTransmission.swift */; };
 		F3B39DF35E03F576E21A50AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B39F4B3F90585038E9106D /* ContentView.swift */; };
 		F3B39E0A50515DA40236130D /* QueuedCombineActionsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B391A8CD028D4364A2FE5C /* QueuedCombineActionsUITests.swift */; };
-		F3B39F109F09C525ED3EC222 /* RTCService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B39AC46E8345FF18594DAA /* RTCService.swift */; };
-		F3B39F5B7B8B7373A40E2B35 /* SignalingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B397F97525314898265716 /* SignalingService.swift */; };
-		F3B39F914D390B8EDBC14033 /* StartTransmission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B3922F76B688FB4D67FA5B /* StartTransmission.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,17 +61,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BE6AA22DF9463975F67B1DD0 /* TransmissionReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransmissionReducer.swift; sourceTree = "<group>"; };
+		BE6AA29E172F42A718AC910F /* IntegratedTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntegratedTests.swift; sourceTree = "<group>"; };
+		BE6AA354E8F40CEED368AB4F /* PTTController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTTController.swift; sourceTree = "<group>"; };
+		BE6AA4C8D0C66C49EB5180A9 /* StopTransmission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopTransmission.swift; sourceTree = "<group>"; };
+		BE6AA8143D9ACE3400716E1F /* PTTView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTTView.swift; sourceTree = "<group>"; };
+		BE6AA87DD65336DC8DC707FC /* PTTViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTTViewModel.swift; sourceTree = "<group>"; };
+		BE6AAA14EED4DA2F6E43DF9A /* TransmissionReducerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransmissionReducerTests.swift; sourceTree = "<group>"; };
+		BE6AADB7E0DD2B414D1902B8 /* PTTTransmissionState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTTTransmissionState.swift; sourceTree = "<group>"; };
+		BE6AAE89F37AF081EE5FFB88 /* StartTransmission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartTransmission.swift; sourceTree = "<group>"; };
 		F3B391A8CD028D4364A2FE5C /* QueuedCombineActionsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueuedCombineActionsUITests.swift; sourceTree = "<group>"; };
-		F3B3922F76B688FB4D67FA5B /* StartTransmission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartTransmission.swift; sourceTree = "<group>"; };
-		F3B393F36B216D0EADC53457 /* StartTransmissionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartTransmissionTests.swift; sourceTree = "<group>"; };
 		F3B3974E99F16B4D5FBCE517 /* QueuedCombineActionsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QueuedCombineActionsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3B397CFCC13B7B04BE12120 /* QueuedCombineActionsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueuedCombineActionsApp.swift; sourceTree = "<group>"; };
-		F3B397F97525314898265716 /* SignalingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalingService.swift; sourceTree = "<group>"; };
 		F3B3990549B5CD3981F42047 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		F3B399127CC8D0136FF2DEA2 /* QueuedCombineActions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QueuedCombineActions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3B399AEAE44FD557B1F826F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F3B39AC46E8345FF18594DAA /* RTCService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTCService.swift; sourceTree = "<group>"; };
-		F3B39C230548BF1A87481052 /* StartTransmissionPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartTransmissionPresentable.swift; sourceTree = "<group>"; };
 		F3B39CDC9C1EBB789737DC13 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F3B39D5EF889C039C6268D41 /* QueuedCombineActionsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueuedCombineActionsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F3B39DB2F1B468E9B10EA8E3 /* QueuedCombineActionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QueuedCombineActionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +107,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE6AA0DFD5D414C245307906 /* entity */ = {
+			isa = PBXGroup;
+			children = (
+				BE6AADB7E0DD2B414D1902B8 /* PTTTransmissionState.swift */,
+			);
+			path = entity;
+			sourceTree = "<group>";
+		};
+		BE6AA4D2426F190ADC966443 /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				BE6AA8143D9ACE3400716E1F /* PTTView.swift */,
+				BE6AA354E8F40CEED368AB4F /* PTTController.swift */,
+				BE6AA87DD65336DC8DC707FC /* PTTViewModel.swift */,
+			);
+			path = presentation;
+			sourceTree = "<group>";
+		};
 		F3B39736EDB7C43B5D960276 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,8 +146,9 @@
 		F3B399008257EEA1300DE056 /* QueuedCombineActionsTests */ = {
 			isa = PBXGroup;
 			children = (
-				F3B3996916CED33FB16BD007 /* domain */,
 				F3B3990549B5CD3981F42047 /* Util.swift */,
+				BE6AAA14EED4DA2F6E43DF9A /* TransmissionReducerTests.swift */,
+				BE6AA29E172F42A718AC910F /* IntegratedTests.swift */,
 			);
 			path = QueuedCombineActionsTests;
 			sourceTree = "<group>";
@@ -127,21 +162,13 @@
 			path = QueuedCombineActionsUITests;
 			sourceTree = "<group>";
 		};
-		F3B3996916CED33FB16BD007 /* domain */ = {
-			isa = PBXGroup;
-			children = (
-				F3B393F36B216D0EADC53457 /* StartTransmissionTests.swift */,
-			);
-			path = domain;
-			sourceTree = "<group>";
-		};
 		F3B39A09C9327503533EAF9D /* domain */ = {
 			isa = PBXGroup;
 			children = (
-				F3B3922F76B688FB4D67FA5B /* StartTransmission.swift */,
-				F3B39C230548BF1A87481052 /* StartTransmissionPresentable.swift */,
-				F3B397F97525314898265716 /* SignalingService.swift */,
-				F3B39AC46E8345FF18594DAA /* RTCService.swift */,
+				BE6AA22DF9463975F67B1DD0 /* TransmissionReducer.swift */,
+				BE6AAE89F37AF081EE5FFB88 /* StartTransmission.swift */,
+				BE6AA4C8D0C66C49EB5180A9 /* StopTransmission.swift */,
+				BE6AA0DFD5D414C245307906 /* entity */,
 			);
 			path = domain;
 			sourceTree = "<group>";
@@ -154,6 +181,7 @@
 				F3B397CFCC13B7B04BE12120 /* QueuedCombineActionsApp.swift */,
 				F3B39F4B3F90585038E9106D /* ContentView.swift */,
 				F3B39A09C9327503533EAF9D /* domain */,
+				BE6AA4D2426F190ADC966443 /* presentation */,
 			);
 			path = QueuedCombineActions;
 			sourceTree = "<group>";
@@ -281,11 +309,16 @@
 			files = (
 				F3B39E0A50515DA40236130D /* QueuedCombineActionsUITests.swift in Sources */,
 				F3B39448AF643C8967E71C90 /* QueuedCombineActionsUITestsLaunchTests.swift in Sources */,
-				F3B39402AA0E96D07D6F760B /* StartTransmission.swift in Sources */,
-				F3B392FF51BCD9EED319FB56 /* StartTransmissionPresentable.swift in Sources */,
-				F3B394C23F23743704C2167A /* SignalingService.swift in Sources */,
 				F3B3904E7932D6133F32EC2C /* Util.swift in Sources */,
-				F3B3995C75EC58908AB8F18A /* RTCService.swift in Sources */,
+				BE6AACF8DAB67174C22C0B0B /* PTTView.swift in Sources */,
+				BE6AA2EF8588ECB2E8746DEA /* PTTController.swift in Sources */,
+				BE6AA2FF55DE398F44BF5DE2 /* PTTViewModel.swift in Sources */,
+				BE6AAF9B9457EDD5491D340A /* TransmissionReducer.swift in Sources */,
+				BE6AA8CE834DDE435A291C60 /* StartTransmission.swift in Sources */,
+				BE6AA98AF23532D53AB00C16 /* StopTransmission.swift in Sources */,
+				BE6AA10F83F709D2F8C4222B /* TransmissionReducerTests.swift in Sources */,
+				BE6AA3BF7D85067DC2589BD7 /* PTTTransmissionState.swift in Sources */,
+				BE6AAE9D2BB47204F2B17A0D /* IntegratedTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,12 +326,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3B39F914D390B8EDBC14033 /* StartTransmission.swift in Sources */,
-				F3B3955DA0E98D3B44636DCB /* StartTransmissionPresentable.swift in Sources */,
-				F3B3932E28186B2CC3956216 /* StartTransmissionTests.swift in Sources */,
-				F3B399EC9583EFCF330387DF /* SignalingService.swift in Sources */,
 				F3B39D21CB6D0E3A3ACF7465 /* Util.swift in Sources */,
-				F3B39D764913CF6A8FFFD00C /* RTCService.swift in Sources */,
+				BE6AA154F74D50B0DE0286F6 /* PTTView.swift in Sources */,
+				BE6AAA8DCA8B457A47756D9D /* PTTController.swift in Sources */,
+				BE6AADE9C6D320ECDD079E00 /* PTTViewModel.swift in Sources */,
+				BE6AAF5FF727771E912D0180 /* TransmissionReducer.swift in Sources */,
+				BE6AA01F2AD872CB24378C5F /* StartTransmission.swift in Sources */,
+				BE6AAE8DA1AB5C1D09B1BE71 /* StopTransmission.swift in Sources */,
+				BE6AA0EB34CF7C1E65D9A6F3 /* TransmissionReducerTests.swift in Sources */,
+				BE6AAF23C81C0312F2BB06DE /* PTTTransmissionState.swift in Sources */,
+				BE6AA2A8644AA0BD089EE061 /* IntegratedTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,11 +345,14 @@
 			files = (
 				F3B3940092EA4454E2BE9149 /* QueuedCombineActionsApp.swift in Sources */,
 				F3B39DF35E03F576E21A50AD /* ContentView.swift in Sources */,
-				F3B39DBB513EB0DCD964A2B6 /* StartTransmission.swift in Sources */,
-				F3B39CDAE893C6A8C8BB36A7 /* StartTransmissionPresentable.swift in Sources */,
-				F3B39F5B7B8B7373A40E2B35 /* SignalingService.swift in Sources */,
 				F3B397E904096F209946E0CE /* Util.swift in Sources */,
-				F3B39F109F09C525ED3EC222 /* RTCService.swift in Sources */,
+				BE6AA7B33C6EB4FEA7F86BE8 /* PTTView.swift in Sources */,
+				BE6AA884C86ECA51D599C1AD /* PTTController.swift in Sources */,
+				BE6AAB35F7517505B2E0BB33 /* PTTViewModel.swift in Sources */,
+				BE6AA450E95DA42486378566 /* TransmissionReducer.swift in Sources */,
+				BE6AABC9707C71967E1F4C1F /* StartTransmission.swift in Sources */,
+				BE6AAE6CB2E6270BB9F4EE3A /* StopTransmission.swift in Sources */,
+				BE6AA0E0B635E24FBA815A1F /* PTTTransmissionState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

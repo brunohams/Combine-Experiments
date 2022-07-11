@@ -11,7 +11,6 @@
 		BE6AA05705C4673AE27EFBEC /* ErrorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AA404B8F68CB61D1525D3 /* ErrorService.swift */; };
 		BE6AA099C29EAEC74BA8300C /* TransmissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AA016A929095536A52381 /* TransmissionService.swift */; };
 		BE6AA0B615B132F66B15613D /* MockTransmissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AA01414142CC238C87DB8 /* MockTransmissionService.swift */; };
-		BE6AA0BBE40B92B8C0076DFB /* TransmissionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AAA03956B99579961F632 /* TransmissionViewModel.swift */; };
 		BE6AA0DA65D6D7BABF913A25 /* TransmissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AA016A929095536A52381 /* TransmissionService.swift */; };
 		BE6AA0E0B635E24FBA815A1F /* PTTTransmissionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AADB7E0DD2B414D1902B8 /* PTTTransmissionState.swift */; };
 		BE6AA0EB34CF7C1E65D9A6F3 /* TransmissionReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AAA14EED4DA2F6E43DF9A /* TransmissionReducerTests.swift */; };
@@ -23,6 +22,7 @@
 		BE6AA2FD5E5959573368147B /* TonePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AA3E4E1B65A3A64914D6E /* TonePlayer.swift */; };
 		BE6AA3BF7D85067DC2589BD7 /* PTTTransmissionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AADB7E0DD2B414D1902B8 /* PTTTransmissionState.swift */; };
 		BE6AA4A85378B10F45F18F7C /* StartTransmission.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AAA1504D17A2ADC3BC480 /* StartTransmission.swift */; };
+		BE6AA507F969F511AD2026CD /* TransmissionObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AAD4D0F05FE306A8401D3 /* TransmissionObserver.swift */; };
 		BE6AA5646D2C70833A249A2F /* TonePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AA3E4E1B65A3A64914D6E /* TonePlayer.swift */; };
 		BE6AA5ECF6A101E0D9E14EA9 /* TransmissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AA016A929095536A52381 /* TransmissionService.swift */; };
 		BE6AA67F7B0996318DDC642C /* MockTonePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AA08E87A89D7C91C9AFA8 /* MockTonePlayer.swift */; };
@@ -31,11 +31,10 @@
 		BE6AA74486C665DF843E01DD /* PTTController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AA07E3055C597704409BB /* PTTController.swift */; };
 		BE6AA75E5DB9F40A21D1CEF8 /* MockTonePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AA08E87A89D7C91C9AFA8 /* MockTonePlayer.swift */; };
 		BE6AA7A4F884E0FEE366E465 /* PTTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AACEEAB17A26753DB53B7 /* PTTView.swift */; };
-		BE6AA7F020779A822603C552 /* TransmissionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AAA03956B99579961F632 /* TransmissionViewModel.swift */; };
 		BE6AA83C84CD18A2E8F95512 /* PTTController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AA07E3055C597704409BB /* PTTController.swift */; };
+		BE6AA8A0D3B22834753685C8 /* TransmissionObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AAD4D0F05FE306A8401D3 /* TransmissionObserver.swift */; };
 		BE6AA8BE1FF7A2E8384D8C8D /* SignalingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AAF2870AB280F7B4E3317 /* SignalingService.swift */; };
 		BE6AA8DA8A98E6F3AF182C65 /* TransmissionReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AA9EE3ADD0369589B0D9E /* TransmissionReducer.swift */; };
-		BE6AA8E1356DFF6EA4C748E4 /* TransmissionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AAA03956B99579961F632 /* TransmissionViewModel.swift */; };
 		BE6AA9032C6D11163A7218F1 /* PTTViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AA726E82C38193A919F23 /* PTTViewModel.swift */; };
 		BE6AA9226357567212923A95 /* MockSignalingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AAE3DFF9E937073CBBE8E /* MockSignalingService.swift */; };
 		BE6AA927A96C6812D001147A /* MockErrorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AA1CFC370F9344D9B1D1B /* MockErrorService.swift */; };
@@ -53,6 +52,7 @@
 		BE6AAD0769AFF57577C30E41 /* MockTransmissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AA01414142CC238C87DB8 /* MockTransmissionService.swift */; };
 		BE6AAD545CFCD6EE8DA402C7 /* StartTransmission.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AAA1504D17A2ADC3BC480 /* StartTransmission.swift */; };
 		BE6AAD669889EF5BA7357063 /* MockSignalingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AAE3DFF9E937073CBBE8E /* MockSignalingService.swift */; };
+		BE6AAD6CD4F247421A7310B9 /* TransmissionObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AAD4D0F05FE306A8401D3 /* TransmissionObserver.swift */; };
 		BE6AAE0275D9A9221A20625F /* StartTransmission.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AAA1504D17A2ADC3BC480 /* StartTransmission.swift */; };
 		BE6AAE0541087058EBEF12C1 /* SignalingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AAF2870AB280F7B4E3317 /* SignalingService.swift */; };
 		BE6AAE3CF6DA8C12FF94A5B1 /* StopTransmission.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AA9C6EACEC991BDB4BC3E /* StopTransmission.swift */; };
@@ -103,10 +103,10 @@
 		BE6AA779D14708478C1BC647 /* TransmissionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransmissionController.swift; sourceTree = "<group>"; };
 		BE6AA9C6EACEC991BDB4BC3E /* StopTransmission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopTransmission.swift; sourceTree = "<group>"; };
 		BE6AA9EE3ADD0369589B0D9E /* TransmissionReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransmissionReducer.swift; sourceTree = "<group>"; };
-		BE6AAA03956B99579961F632 /* TransmissionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransmissionViewModel.swift; sourceTree = "<group>"; };
 		BE6AAA14EED4DA2F6E43DF9A /* TransmissionReducerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransmissionReducerTests.swift; sourceTree = "<group>"; };
 		BE6AAA1504D17A2ADC3BC480 /* StartTransmission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartTransmission.swift; sourceTree = "<group>"; };
 		BE6AACEEAB17A26753DB53B7 /* PTTView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTTView.swift; sourceTree = "<group>"; };
+		BE6AAD4D0F05FE306A8401D3 /* TransmissionObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransmissionObserver.swift; sourceTree = "<group>"; };
 		BE6AADB7E0DD2B414D1902B8 /* PTTTransmissionState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTTTransmissionState.swift; sourceTree = "<group>"; };
 		BE6AAE3DFF9E937073CBBE8E /* MockSignalingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSignalingService.swift; sourceTree = "<group>"; };
 		BE6AAF2870AB280F7B4E3317 /* SignalingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalingService.swift; sourceTree = "<group>"; };
@@ -197,7 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				BE6AA779D14708478C1BC647 /* TransmissionController.swift */,
-				BE6AAA03956B99579961F632 /* TransmissionViewModel.swift */,
+				BE6AAD4D0F05FE306A8401D3 /* TransmissionObserver.swift */,
 			);
 			path = "transmission-interacting";
 			sourceTree = "<group>";
@@ -434,7 +434,7 @@
 				BE6AA9032C6D11163A7218F1 /* PTTViewModel.swift in Sources */,
 				BE6AA83C84CD18A2E8F95512 /* PTTController.swift in Sources */,
 				BE6AAA94BC7AD24B780D3436 /* TransmissionController.swift in Sources */,
-				BE6AA8E1356DFF6EA4C748E4 /* TransmissionViewModel.swift in Sources */,
+				BE6AA8A0D3B22834753685C8 /* TransmissionObserver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,7 +461,7 @@
 				BE6AACF3F78238FEC0D89807 /* PTTViewModel.swift in Sources */,
 				BE6AA108B2EBAEBAF5F3B4CA /* PTTController.swift in Sources */,
 				BE6AA6D523A8DA2B1CB8AC0E /* TransmissionController.swift in Sources */,
-				BE6AA7F020779A822603C552 /* TransmissionViewModel.swift in Sources */,
+				BE6AAD6CD4F247421A7310B9 /* TransmissionObserver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,7 +488,7 @@
 				BE6AAAFF6137D00493116625 /* PTTViewModel.swift in Sources */,
 				BE6AA74486C665DF843E01DD /* PTTController.swift in Sources */,
 				BE6AA195FE855F6A50758F4E /* TransmissionController.swift in Sources */,
-				BE6AA0BBE40B92B8C0076DFB /* TransmissionViewModel.swift in Sources */,
+				BE6AA507F969F511AD2026CD /* TransmissionObserver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

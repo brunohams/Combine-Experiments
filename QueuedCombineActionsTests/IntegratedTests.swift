@@ -19,19 +19,34 @@ class IntegratedTests: XCTestCase {
     var transmissionService: MockTransmissionService!
     var errorService: MockErrorService!
 
+    var transmissionObserver: TransmissionObserver!
+    var transmissionController: TransmissionController!
+
     override func setUp() {
         viewModel = PTTViewModel()
+
         signalingService = MockSignalingService()
         transmissionService = MockTransmissionService()
         errorService = MockErrorService()
+
         startTransmission = StartTransmission(
                 signalingService, transmissionService, MockTonePlayer(), errorService
         )
         stopTransmission = StopTransmission(
                 signalingService, transmissionService, MockTonePlayer()
         )
+
         reducer = TransmissionReducer(startTransmission: startTransmission, stopTransmission: stopTransmission)
         controller = PTTController(viewModel: viewModel, transmissionReducer: reducer)
+
+        transmissionController = TransmissionController(
+                errorService: errorService,
+                pttSubject: viewModel.pttSubject
+        )
+        transmissionObserver = TransmissionObserver(
+                transmissionService: transmissionService,
+                controller: transmissionController
+        )
     }
 
 
@@ -92,24 +107,12 @@ class IntegratedTests: XCTestCase {
     }
 
     func testShouldEmitErrorWhenFailsDuringTransmission() {
-        TransmissionViewModel(
-                transmissionService: transmissionService,
-                errorService: errorService,
-                pttSubject: viewModel.pttSubject
-        )
-
         controller.togglePTT() // start
         transmissionService.subject.send(.transmitError) // emit error in mid transmission
         XCTAssertEqual("Deu ruim aqui meu irmão ;-;", errorService.errorQueue.last)
     }
 
     func testShouldStopTransmissionWhenFailsDuringTransmission() {
-        TransmissionViewModel(
-                transmissionService: transmissionService,
-                errorService: errorService,
-                pttSubject: viewModel.pttSubject
-        )
-
         controller.togglePTT() // start
         transmissionService.subject.send(.transmitError) // emit error in mid transmission
 
